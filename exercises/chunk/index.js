@@ -9,6 +9,19 @@
 // chunk([1, 2, 3, 4, 5], 10) --> [[ 1, 2, 3, 4, 5]]
 
 function chunk(array, size) {
+  //  create chunk array
+  // create index at 0.
+  // while index  < arr length
+    // push slice of "size" array into chunk
+    // add size to index
+  const chunked = []; 
+  let index = 0;
+  while (index < array.length) {
+    chunked.push(array.slice(index, index + size));
+    index += size;
+  }
+  return chunked;
+
 }
 
 // function chunk(array, size) {
