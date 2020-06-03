@@ -17,6 +17,21 @@
 //       '### '
 //       '####'
 
-function steps(n) {}
-
+function steps(n, row = 0, stair = '') {
+  if (row === n) {
+    return;
+    // once row hits n return!
+  }
+  // if curr level for stair.. clg the stair and return
+  // recurse to keep adding spaces until stair is row length
+  if (n == stair.length) {
+    console.log(stair)
+    return steps(n, row + 1)
+  }
+  //  str should be of length
+  //  if stair len is less than curr row.. add a #, else
+  let add = stair.length <= row ? '#' : ' ';
+  steps(n, row, stair + add);
+}
+steps(4)
 module.exports = steps;
